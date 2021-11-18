@@ -16,7 +16,7 @@ function App() {
       <div className="App">
         <Routes>
 
-          <Route path="/" element={
+          <Route path="/Amazon/" element={
             <>
               <Header />
               <Home />

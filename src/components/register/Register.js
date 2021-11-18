@@ -75,7 +75,7 @@ function Register() {
 
     return (
         <div className='register'>
-            <Link to='/'>
+            <Link to='/Amazon/'>
                 <img
                     className="login__logo"
                     src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png'
@@ -98,7 +98,7 @@ function Register() {
                     <label>Re-enter password</label>
                     <input type='password' value={password2} onChange={e => setNewUser({ ...newUser, password2: e.target.value })} />
 
-                    {/* <Link to='/home'> */}
+                    {/* <Link to='/Amazon/'> */}
                     <button type='submit' className='register__registerButton'>Register</button>
                     {/* </Link> */}
 

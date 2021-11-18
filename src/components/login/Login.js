@@ -51,9 +51,9 @@ function Login() {
                     <label>Password</label>
                     <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
 
-                    <Link to='/home'>
-                        <button onClick={signIn} type='submit' className='login__signInButton'>Sign In</button>
-                    </Link>
+                    {/* <Link to='/Amazon/'> */}
+                    <button onClick={signIn} type='submit' className='login__signInButton'>Sign In</button>
+                    {/* </Link> */}
 
                 </form>
 
