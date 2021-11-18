@@ -33,7 +33,7 @@ const Header = () => {
     return (
         <>
             <div className="header">
-                <Link to="/home">
+                <Link to="/">
                     <img className="header_logo wb" src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" />
                 </Link>
                 <form onSubmit={search} className="header_search">

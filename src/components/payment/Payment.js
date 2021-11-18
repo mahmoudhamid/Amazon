@@ -67,7 +67,7 @@ function Payment() {
                         <form>
                             <div className='payment__priceContainer'>
                                 <h3>Order Total: $ {totalCost()}</h3>
-                                <Link to="/home">
+                                <Link to="/">
                                     <button>
                                         <span>Order now</span>
                                     </button>
