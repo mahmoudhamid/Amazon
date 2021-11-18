@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import React, { useState } from 'react'
 import { useStateValue } from '../stateprovider/StateProvider';
 import './Login.css'
@@ -8,6 +9,7 @@ function Login() {
     const [{ basket, users, currentUser }, dispatch] = useStateValue();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const signIn = (e) => {
         e.preventDefault();
@@ -28,6 +30,7 @@ function Login() {
                     type: "Set_BASKET",
                     item: user
                 })
+                navigate('/amazon');
             }
         })
     }

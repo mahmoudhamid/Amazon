@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router'
 import { useStateValue } from '../stateprovider/StateProvider';
 import './Register.css'
 
 
 function Register() {
+    const navigate = useNavigate();
     const [{ basket, users, currentUser }, dispatch] = useStateValue();
     const [newUser, setNewUser] = useState({ name: '', email: '', password1: '', password2: '' })
     let name = newUser.name;
@@ -45,31 +47,12 @@ function Register() {
                         pay: 0
                     }
                 })
+                navigate('/amazon');
             }
             else {
                 console.log('this user is already there')
             }
         }
-
-        // users.map(user => {
-        //     if (user.password === password && email === user.email) {
-        //         dispatch({
-        //             type: "SET_CURRENT_USER",
-        //             item: {
-        //                 id: user.id,
-        //                 name: user.name,
-        //                 email: user.email,
-        //                 password: user.password,
-        //                 items: user.items,
-        //                 pay: user.pay
-        //             }
-        //         })
-        //         dispatch({
-        //             type: "Set_BASKET",
-        //             item: user
-        //         })
-        //     }
-        // })
     }
 
 
