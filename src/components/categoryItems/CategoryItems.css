@@ -1,0 +1,8 @@
+.categoryItems {
+    margin-bottom: 20px;
+}
+.categoryItems_row {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5px;
+}

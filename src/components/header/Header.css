@@ -1,0 +1,121 @@
+
+.header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+.header_logo {
+    width: 100px;
+    object-fit: contain;
+    margin: 0px 20px;
+    margin-top: 5px;
+    padding: 3px;
+}
+.header_search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 24px;
+}
+.header_searchInput {
+    height: 38px;
+    padding: 5px 10px;
+    border: none;
+    width: 100%;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.header_searchIcon {
+    padding: 5px;
+    height: 38px !important;
+    background-color: #febd69;
+    min-width: 38px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+/* search filter */
+.header_search > datalist {
+    width: 500px;
+}
+.header_search_item {
+    width: 500px;
+    background: white;
+}
+
+
+
+.header_nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+.header_option {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px;
+    color: white;
+    padding: 3px;
+}
+.header_optionLineOne {
+    font-size: 10px;
+}
+.header_optionLineTwo {
+    font-size: 13px;
+    font-weight: 800;
+}
+.header_optionBasket {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.header_optionBasket > a {
+    color: white;
+    text-decoration: none;
+}
+.header_basketCount {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.orange {
+    color: #f08804;
+    position: relative;
+    right: 6px;
+}
+.wb:hover  {
+    border: white solid 1px;
+    padding: 2px;
+}
+
+
+/* UNDER HEADER */
+.underHeader {
+    background: #232f3e;
+    color: white;
+    padding: 7px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+}
+.underHeader > div {
+    font-family: inherit;
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    line-height: 1.2em;
+}
+.underHeader .wb:hover {
+    border: white solid 1px;
+    padding: 7px;
+}
