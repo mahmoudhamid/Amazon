@@ -9,7 +9,7 @@ function Product({ item }) {
     const addToBasket = () => {
         let found = false;
         if (basket.length) {
-            basket.map(basketItem => {
+            basket.forEach(basketItem => {
                 if (basketItem.id === item.id) {
                     found = true;
                 }
@@ -58,7 +58,7 @@ function Product({ item }) {
             type: "SET_CURRENT_PRODUCT",
             item: {
                 id: item.id,
-                title: item.title,
+                title: item.name,
                 price: item.price,
                 image: item.image,
                 rating: item.rating,
@@ -79,13 +79,13 @@ function Product({ item }) {
                 </p>
                 <div className="product_rating">
                     {Array(item.rating).fill().map((_, i) => (
-                        <p>⭐</p>
+                        <p key={Math.random()}>⭐</p>
                     ))}
 
                 </div>
             </div>
             <Link to="/currentProduct">
-                <img src={item.image} />
+                <img alt="" src={item.image} />
             </Link>
             <button onClick={addToBasket}>Add To Basket</button>
 

@@ -19,16 +19,6 @@ export const reducer = (state, action) => {
         case "REMOVE_FROM_BASKET":
             let newBasket = [...state.basket];
             newBasket = newBasket.filter(basketItem => action.id !== basketItem.id)
-            // const index = state.basket.findIndex(
-            //     (basketItem) => basketItem.id === action.id
-            // );
-            // let newBasket = [...state.basket];
-            // if (index >= 0) {
-            //     newBasket.splice(index, 1);
-            // }
-            // else {
-            //     console.warn(`Cant Remove Product (id : ${action.id}) as it is not in the basket`)
-            // }
             return {
                 ...state,
                 basket: newBasket
@@ -71,7 +61,7 @@ export const reducer = (state, action) => {
             }
         case "SET_NUM":
             let modBasket = [...state.basket];
-            modBasket.map(i => {
+            modBasket.forEach(i => {
                 if (action.id === i.id) {
                     i.num = action.num;
                 }
@@ -84,10 +74,13 @@ export const reducer = (state, action) => {
             let arr = [...users];
             arr.push(action.user);
             console.log(arr);
-        default:
             return {
                 ...state,
                 users: [...arr]
+            }
+        default:
+            return {
+                ...state
             }
     }
 }

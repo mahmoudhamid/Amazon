@@ -7,7 +7,7 @@ import './Register.css'
 
 function Register() {
     const navigate = useNavigate();
-    const [{ basket, users, currentUser }, dispatch] = useStateValue();
+    const [{ users }, dispatch] = useStateValue();
     const [newUser, setNewUser] = useState({ name: '', email: '', password1: '', password2: '' })
     let name = newUser.name;
     let email = newUser.email;
@@ -19,7 +19,7 @@ function Register() {
         console.log(name, email, password1, password2);
         if (name !== '' && email !== '' && password1 !== '' && password2 !== '') {
             let found = false;
-            users.map(user => {
+            users.forEach(user => {
                 if (email === user.email) {
                     found = true;
                 }

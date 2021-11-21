@@ -10,14 +10,7 @@ function CategoryItems() {
 
                 {
                     items.map(item => (
-                        <Product item={item} />
-                    ))
-                }
-            </div>
-            <div className="categoryItems_row">
-                {
-                    items.map(item => (
-                        <Product item={item} />
+                        <Product key={Math.random()} item={item} />
                     ))
                 }
             </div>

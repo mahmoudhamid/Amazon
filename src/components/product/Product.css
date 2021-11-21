@@ -6,7 +6,7 @@
     margin: 10px;
     padding: 20px;
     padding-top: 10px;
-    width: 18%;
+    width: 17%;
     max-height: 350px;
     min-width: 100px;
     background: white;
@@ -30,17 +30,39 @@
 .product_rating {
     display: flex;
     width: 100%;
+    margin-bottom: 5px;
 }
 .product > a  > img {
     height: 100px;
     max-height: 200px;
     width: 100%;
     object-fit: contain;
-    margin: 20px 5px;
+    margin: 20px auto;
 }
 .product > button {
     background: #f0c14b;
     border: 1px solid #a88734;
     margin-top: 10px;
     color: #111;
+}
+ @media (max-width:576px) {
+    .product {
+        width: 45%;
+    }
+    .product:last-child {
+        margin: 10px auto 10px 13px;
+    }
+}
+
+ @media (max-width:768px) and (min-width:577px) {
+    .product {
+        width: 30%;
+        margin: 10px 1.5%;
+    }
+}
+@media (min-width:769px) and (max-width:992px) {
+    .product {
+        width: 30%;
+        margin: 10px 1.5%;
+    }
 }

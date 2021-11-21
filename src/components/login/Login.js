@@ -6,14 +6,14 @@ import './Login.css'
 
 
 function Login() {
-    const [{ basket, users, currentUser }, dispatch] = useStateValue();
+    const [{ users }, dispatch] = useStateValue();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const signIn = (e) => {
         e.preventDefault();
-        users.map(user => {
+        users.forEach(user => {
             if (user.password === password && email === user.email) {
                 dispatch({
                     type: "SET_CURRENT_USER",
@@ -38,7 +38,7 @@ function Login() {
 
     return (
         <div className='login'>
-            <Link to='/'>
+            <Link to='/Amazon/'>
                 <img
                     className="login__logo"
                     src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png'

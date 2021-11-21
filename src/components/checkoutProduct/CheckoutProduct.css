@@ -59,3 +59,27 @@ margin-bottom: 20px;
 .checkoutProduct_number > button:hover {
     background: #ffa41c;
 }
+@media (max-width:576px) {
+    .checkoutProduct {
+        display: flex;
+        flex-direction: column;
+    }
+    .checkoutProduct_image{
+        margin: auto;
+    }
+    .checkoutProduct_info {
+        border-left: none;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+    .checkoutProduct_number {
+        width: 40%;
+        margin:auto;
+    }
+    .checkoutProduct_info > button {
+        width: 60%;
+        margin-left:20%;
+        margin-top: 20px;
+
+    }
+}

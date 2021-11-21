@@ -8,9 +8,15 @@ function CheckoutProduct({ id, name, image, price, num, rating }) {
 
     const removeFromBasket = () => {
         dispatch({
+            type: "SET_NUM",
+            num: 0,
+            id: id
+        })
+        dispatch({
             type: "REMOVE_FROM_BASKET",
             id: id
         })
+
     }
     const increment = () => {
         let x = input + 1;
@@ -44,7 +50,7 @@ function CheckoutProduct({ id, name, image, price, num, rating }) {
 
     return (
         <div className="checkoutProduct">
-            <img src={image} className="checkoutProduct_image" />
+            <img src={image} alt='' className="checkoutProduct_image" />
             <div className="checkoutProduct_info">
                 <p className="checkoutProduct_title">{name}</p>
                 <p className="checkoutProduct_price">

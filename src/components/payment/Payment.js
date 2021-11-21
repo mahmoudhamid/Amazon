@@ -1,12 +1,10 @@
-import CurrencyFormat from 'react-currency-format';
 import { Link } from 'react-router-dom'
 import CheckoutProduct from '../checkoutProduct/CheckoutProduct';
-import { getBasketTotal } from '../reducer/reducer';
 import { useStateValue } from '../stateprovider/StateProvider';
 import './Payment.css'
 
 function Payment() {
-    const [{ basket }, dispatch] = useStateValue();
+    const [{ basket }] = useStateValue();
     const totalCost = () => {
         let cost = 0;
         basket.forEach(item => {
@@ -44,6 +42,7 @@ function Payment() {
                     <div className='payment__items'>
                         {basket.map(item => (
                             <CheckoutProduct
+                                key={Math.random()}
                                 id={item.id}
                                 title={item.title}
                                 image={item.image}

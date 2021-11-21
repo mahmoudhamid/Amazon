@@ -4,25 +4,57 @@ import './CurrentProduct.css'
 function CurrentProduct() {
     const [{ currentProduct, basket }, dispatch] = useStateValue();
     const addToBasket = () => {
-        dispatch({
-            type: "ADD_TO_BASKET",
-            item: {
-                id: currentProduct.id,
-                title: currentProduct.title,
-                price: currentProduct.price,
-                image: currentProduct.image,
-                rating: currentProduct.rating
+        let found = false;
+        if (basket.length) {
+            basket.forEach(basketItem => {
+                if (basketItem.id === currentProduct.id) {
+                    found = true;
+                }
+            })
+            if (found) {
+                dispatch({
+                    type: "SET_NUM",
+                    num: currentProduct.num + 1,
+                    id: currentProduct.id
+                })
             }
-        })
-        dispatch({
-            type: "UPDATE_BASKET",
-            item: basket
-        })
+            else {
+                dispatch({
+                    type: "ADD_TO_BASKET",
+                    item: currentProduct
+                })
+                dispatch({
+                    type: "UPDATE_BASKET",
+                    item: basket
+                })
+                dispatch({
+                    type: "SET_NUM",
+                    num: currentProduct.num + 1,
+                    id: currentProduct.id
+                })
+            }
+        }
+        else {
+            dispatch({
+                type: "ADD_TO_BASKET",
+                item: currentProduct
+            })
+            dispatch({
+                type: "UPDATE_BASKET",
+                item: basket
+            })
+            dispatch({
+                type: "SET_NUM",
+                num: currentProduct.num + 1,
+                id: currentProduct.id
+            })
+        }
     }
+
 
     return (
         <div className="currentProduct">
-            <img className="currentProduct_image" src={currentProduct.image} />
+            <img className="currentProduct_image" src={currentProduct.image} alt="image" />
             <div className="currentProduct_info">
                 <h3 className="currentProduct_title">
                     {currentProduct.title}
